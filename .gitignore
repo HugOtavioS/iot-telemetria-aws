@@ -1,0 +1,6 @@
+*.pem
+*.key
+*.crt
+.env
+secrets.h
+node_modules
