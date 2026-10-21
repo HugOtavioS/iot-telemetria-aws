@@ -1,6 +1,6 @@
 # Telemetria IoT ponta a ponta na AWS
 
-Um ESP32 físico enviando telemetria real para a nuvem, com comunicação autenticada por certificado, processamento em um serviço Node.js e histórico persistido em banco relacional.
+Um ESP32 físico enviando telemetria simulada para a nuvem, com comunicação autenticada por certificado, processamento em um serviço Node.js e histórico persistido em banco relacional.
 
 A proposta original da atividade era apenas estruturar a comunicação na nuvem. Fui além e integrei o hardware real ao fluxo completo.
 
@@ -26,15 +26,6 @@ A proposta original da atividade era apenas estruturar a comunicação na nuvem.
 ## Por que mTLS
 
 Em vez de usuário e senha, cada dispositivo tem seu próprio certificado X.509. O IoT Core só aceita a conexão se o certificado for válido e estiver vinculado a uma política que autoriza aquele tópico. Na prática: um dispositivo comprometido pode ser revogado sozinho, sem afetar os outros, e nenhuma credencial trafega em texto.
-
-## Estrutura do repositório
-
-```
-firmware/        código do ESP32 (C/C++)
-service/         serviço Node.js que assina os tópicos e grava no banco
-database/        script de criação da tabela
-docs/            diagrama e prints do console AWS
-```
 
 <!-- TODO: ajuste a estrutura acima para refletir as pastas reais do repositório -->
 
